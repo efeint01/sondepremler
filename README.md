@@ -20,6 +20,6 @@ Kandilli rasathanesi API'ını kullanarak son deprem bilgilerini gösteren bir a
   
 # Uyarı
 
-Bu proje herhangi bir ticari amaçla kullanılamaz.
+Bu proje herhangi bir ticari amaç için kullanılamaz.
 
   
