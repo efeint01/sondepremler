@@ -1,7 +1,7 @@
 
 # Son Depremler
 
-Kandilli rasathanesindeki API'ını kullanarak son deprem bilgilerini gösteren bir android uygulama.
+Kandilli rasathanesi API'ını kullanarak son deprem bilgilerini gösteren bir android uygulama.
 
 
 
