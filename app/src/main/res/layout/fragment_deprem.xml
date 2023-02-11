@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DepremFragment">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:max="10"
+        android:progress="7"
+        app:indicatorColor="#D84315"
+        app:indicatorSize="300dp"
+        app:trackColor="@color/cardview_dark_background"
+        app:trackCornerRadius="8dp"
+        app:trackThickness="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="BÜYÜKLÜK" />
+
+        <TextView
+            android:id="@+id/magTw"
+            android:layout_width="wrap_content"
+            android:textColor="?android:textColorPrimary"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semi_bold"
+            android:text="7.7"
+            android:textSize="70sp" />
+
+        <TextView
+            android:id="@+id/locationTw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:maxWidth="250dp"
+            android:gravity="center"
+            android:text="HATAY - ANTAKYA" />
+
+        <com.github.curioustechizen.ago.RelativeTimeTextView
+            android:id="@+id/dateTw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/regular"
+            android:text="06.02.2023"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+</FrameLayout>
