@@ -2,6 +2,7 @@
 # Son Depremler
 
 Kandilli rasathanesi API'ını kullanarak son deprem bilgilerini gösteren bir android uygulama.
+Kullanmak için app-debug.apk dosyasını indirebilirsiniz.
 
 
 
