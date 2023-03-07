@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -66,18 +67,25 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < data.length(); i++) {
                     JSONObject obj = data.getJSONObject(i);
                     double mag = obj.getDouble("mag"); //magnitude
-                    double lng = obj.getDouble("lng");  //longitude
-                    double lat = obj.getDouble("lat"); //latitude
-                    String lokasyon = obj.getString("lokasyon");
+                    //get geolocation
+                    JSONArray coordinatesArray = obj.getJSONObject("geojson").getJSONArray("coordinates");
+                    double lng = coordinatesArray.getDouble(0);  //longitude
+                    double lat = coordinatesArray.getDouble(1); //latitude
+                    //get earthquake center
+                    JSONObject epiCenterObj = obj.getJSONObject("location_properties").getJSONObject("epiCenter");
+
+                    String location = epiCenterObj.getString("name");
                     double depth = obj.getDouble("depth");
                     String title = obj.getString("title");
-                    long timestamp = obj.getLong("timestamp");
+
+                    //get earthquake time
+                    long timestamp = obj.getLong("created_at");
 
                     arrayList.add(new DepremItem(
                             mag,
                             lng,
                             lat,
-                            lokasyon,
+                            location,
                             depth,
                             title,
                             timestamp
@@ -92,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 setViewPagerAdapter();
 
             } catch (JSONException e) {
-                throw new RuntimeException(e);
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "getData: " + e.getMessage());
             }
         }, error -> Toast.makeText(MainActivity.this, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
 
